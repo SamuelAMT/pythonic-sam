@@ -55,6 +55,19 @@ For example, Decimal((0, (1, 4, 1, 4), -3)) returns Decimal('1.414').
 
 as_tuple() - Return a named tuple representation of the number: DecimalTuple(sign, digits, exponent).
 """
-m = 0
-n = 0
-print(m+n)
+
+# fractions
+from fractions import Fraction
+m = Fraction(16, -10)
+n = Fraction(123)
+o = Fraction('3/7')
+print(m)
+print(n)
+
+"""
+class fractions.Fraction(numerator=0, denominator=1)
+class fractions.Fraction(other_fraction)
+class fractions.Fraction(float)
+class fractions.Fraction(decimal)
+class fractions.Fraction(string)
+"""
