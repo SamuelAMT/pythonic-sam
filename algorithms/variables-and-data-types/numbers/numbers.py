@@ -1,5 +1,4 @@
 # int - integer
-from asyncio.windows_events import INFINITE
 
 a = 1
 
