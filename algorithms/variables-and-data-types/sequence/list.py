@@ -38,3 +38,9 @@ Differences between sorted and sort:
 """
 
 """Lists implement all of the common and mutable sequence operations + sort method."""
+
+"""
+Python lists are flexible but not memory-efficient, especially for large numeric data.
+For homogeneous data types, consider using `array.array` for better memory usage,
+or `numpy.array` for both performance and advanced data manipulation capabilities.
+"""

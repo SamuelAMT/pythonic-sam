@@ -1,4 +1,4 @@
-# Bytes Objects
+# bytes
 
 """
 Bytes objects are immutable sequences of single bytes.

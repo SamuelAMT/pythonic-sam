@@ -1,7 +1,7 @@
-# Bytearray Objects
+# bytearray
 
 """
-bytearray objects are a mutable counterpart to bytes objects.
+Bytearray objects are a mutable counterpart to bytes objects.
 """
 
 bytearray_1 = bytearray() # empty bytearray
