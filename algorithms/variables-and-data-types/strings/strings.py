@@ -1,5 +1,9 @@
 # str
 
+"""
+Strings are immutable sequences of Unicode code points.
+"""
+
 # String Methods
 a, b = "A String", 'doesn\'t care much about single or double quotes'
 print(a, b)
