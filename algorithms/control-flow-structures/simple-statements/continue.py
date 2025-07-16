@@ -1,7 +1,9 @@
 # continue
 
 """
-
+The continue statement skips the current iteration of the loop.
+It continues further iterations even if the loop condition is still true.
+Often used inside for or while when a condition is met to skip processing.
 """
 
 for i in range(10):
