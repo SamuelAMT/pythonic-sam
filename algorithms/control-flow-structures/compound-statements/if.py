@@ -1,7 +1,7 @@
 # if
 
 """
-The `if` statement allows conditional execution of code blocks.
+The if statement allows conditional execution of code blocks.
 It runs only if the given condition is true.
 Often used with `elif` and `else` to handle multiple paths.
 """
@@ -48,5 +48,3 @@ x = 15
 if x > 10:
     if x < 20:
         print("x is between 10 and 20") # if statement with logical operators
-
-
