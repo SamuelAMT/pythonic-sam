@@ -1,44 +1,62 @@
-# function_definitions
+# type parameter lists
 
 """
-Function definitions in Python use the def keyword to create reusable blocks of code.
-They can accept parameters, return values, and include optional annotations for types.
-Functions can also be nested or defined using async def for asynchronous operations.
+Type parameter lists allow defining generics directly in function, class, and
+type alias declarations. They enhance type safety and reusability across different types.
 """
 
-# Basic function definition
-def greet(name):
-    return f"Hello, {name}!"
+from typing import TypeVar, Generic, Callable
 
-print(greet("Samuel"))
+# --------------------------------------------------
+# Generic Function
+# --------------------------------------------------
 
+T = TypeVar("T")
 
-# Function with type annotations
-def add(x: int, y: int) -> int:
-    return x + y
+# Type parameter directly in function definition
+def identity[T](value: T) -> T:
+    return value
 
-print(add(2, 3))
-
-
-# Function with default parameters
-def power(base, exponent=2):
-    return base ** exponent
-
-print(power(3))
+print(identity(42))
+print(identity("hello"))
 
 
-# Function with *args and **kwargs
-def describe(*args, **kwargs):
-    print("Args:", args)
-    print("Kwargs:", kwargs)
+# --------------------------------------------------
+# Generic Class
+# --------------------------------------------------
 
-describe(1, 2, 3, name="Alice", age=30)
+U = TypeVar("U")
+
+class Box[U]:
+    def __init__(self, content: U):
+        self.content = content
+
+    def get(self) -> U:
+        return self.content
+
+int_box = Box(123)
+str_box = Box("abc")
+
+print(int_box.get())
+print(str_box.get())
 
 
-# Nested function
-def outer():
-    def inner():
-        return "Inner!"
-    return inner()
+# --------------------------------------------------
+# Generic Type Alias
+# --------------------------------------------------
 
-print(outer())
+V = TypeVar("V")
+
+type Mapper[V] = Callable[[V], V]  # Alias for a function that maps a value to itself
+
+def square(x: int) -> int:
+    return x * x
+
+def echo(x: str) -> str:
+    return x
+
+int_mapper: Mapper[int] = square
+str_mapper: Mapper[str] = echo
+
+print(int_mapper(4))
+print(str_mapper("ok"))

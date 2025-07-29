@@ -1,4 +1,4 @@
-# class_definitions
+# class definitions
 
 """
 Class definitions in Python use the class keyword to create new user-defined types.
